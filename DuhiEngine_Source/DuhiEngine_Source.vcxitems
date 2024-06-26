@@ -15,13 +15,17 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)CommonInclude.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)DHDinoObject.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)DHEApplication.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)DHGameObject.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)DHGameObject2p.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)DHInput.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)DHDinoObject.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)DHEApplication.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)DHGameObject.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)DHGameObject2p.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)DHInput.cpp" />
   </ItemGroup>
 </Project>

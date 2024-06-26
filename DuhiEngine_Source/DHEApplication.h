@@ -2,6 +2,7 @@
 #include "CommonInclude.h"
 #include "DHGameObject.h"
 #include "DHGameObject2p.h"
+#include "DHDinoObject.h"
 
 namespace dh {
 	class Application
@@ -22,6 +23,7 @@ namespace dh {
 	
 		GameObject mPlayer;
 		GameObject2p mPlayer2p;
+		DinoObject Dino;
 		
 	};
 

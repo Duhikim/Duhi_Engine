@@ -16,16 +16,16 @@ namespace dh {
         
         
         if (GetAsyncKeyState(VK_LEFT) & 0X8000) {
-            mX -= 0.01f;
+            mX -= 0.05f;
         }
         if (GetAsyncKeyState(VK_RIGHT) & 0X8000) {
-            mX += 0.01f;
+            mX += 0.05f;
         }
         if (GetAsyncKeyState(VK_UP) & 0X8000) {
-            mY -= 0.01f;
+            mY -= 0.05f;
         }
         if (GetAsyncKeyState(VK_DOWN) & 0X8000) {
-            mY += 0.01f;
+            mY += 0.05f;
         }
 
     }
