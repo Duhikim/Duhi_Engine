@@ -23,6 +23,8 @@ namespace dh {
 		float Xacc;
 		float Yacc;
 		float height;
+		
+		void creatKeyInput();
 	};
 
 }

@@ -21,34 +21,7 @@ namespace dh {
 
 	
 	void DinoObject::Update() {
-		if (Ypos > 0) { Ypos = 0; Yacc = 0; Yspeed = -0.3 * Yspeed; }
-		
-		if (Input::GetKey(eKeyCode::W) && (Ypos>-3 && Ypos<0)) {
-			if (Yspeed > -0.01)
-			Yspeed = -0.03;
-		}
-		Yacc = 0.000002;
-		
-		if (Ypos < -700) {	Yspeed = 0.00005;	}
-		Ypos += Yspeed;
-		Yspeed += Yacc;
-		
-
-		if (Input::GetKey(eKeyCode::D)) {
-			Xpos += 0.01;
-		}
-		
-
-
-		if (Input::GetKey(eKeyCode::A)) {
-			Xpos -= 0.01;
-		}
-		
-		
-		height = 0;
-		if (Input::GetKey(eKeyCode::S)) {
-			height = 50;
-		}
+		creatKeyInput();
 
 	}
 	void DinoObject::LateUpdate() {
@@ -67,6 +40,74 @@ namespace dh {
 		DeleteObject(GreenBrush);
 		
 
+	}
+
+	void DinoObject::creatKeyInput() {
+		
+
+		if (Input::GetKey(eKeyCode::Left)) {// 해당 키를 누르고 있으면(Pressed)
+			Xacc = -0.000001;
+		}
+		
+		if (Input::GetKey(eKeyCode::Right)) {
+			Xacc = 0.000001;
+		}
+
+		if (!Input::GetKey(eKeyCode::Left) && !Input::GetKey(eKeyCode::Right)) { 
+			Xacc = 0;
+		}
+		if (Input::GetKey(eKeyCode::Left) && Input::GetKey(eKeyCode::Right)) {
+			Xacc = 0;
+		}
+		if (Input::GetKey(eKeyCode::Down)) {
+			Xacc = 0.0;		
+		}
+
+	
+
+
+		if (Xacc) {
+			if (-0.01 < Xspeed && Xspeed < 0.01) {
+				Xspeed += Xacc;
+			}
+			else if (Xspeed>=0.01) { Xspeed == 0.01; }
+			else if (Xspeed <= -0.01) { Xspeed == -0.01; }
+		}
+
+		else {
+			if (Xspeed > 0) {
+				Xspeed -= 0.0000003;
+				if (Xspeed < 0) Xspeed = 0;
+			}
+			else if (Xspeed < 0) {
+				Xspeed += 0.0000003; 
+				if (Xspeed > 0) Xspeed = 0;
+			}
+		}
+		Xpos += Xspeed;
+
+
+
+		if (Ypos > 0) { Ypos = 0; Yacc = 0; Yspeed = 0; }
+
+		if (Input::GetKey(eKeyCode::Up) && !Ypos) {
+			if (Yspeed > -0.01)
+				Yspeed = -0.03;
+		}
+		Yacc = 0.000002;
+
+		if (Ypos < -700) { Yspeed = 0.00005; }
+		Ypos += Yspeed;
+		Yspeed += Yacc;
+
+
+		
+
+		height = 0;
+		if (Input::GetKey(eKeyCode::Down)) {
+			height = 50;
+		}
+	
 	}
 
 }
