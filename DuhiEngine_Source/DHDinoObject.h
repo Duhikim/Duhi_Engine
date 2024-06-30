@@ -20,7 +20,7 @@ namespace dh {
 		float Ypos;
 		float Xspeed;
 		float Yspeed;
-		float Xacc;
+		double Xacc;
 		float Yacc;
 		float height;
 		

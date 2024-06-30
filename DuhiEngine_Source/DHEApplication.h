@@ -11,7 +11,7 @@ namespace dh {
 		Application();
 		~Application();
 		void test();
-		void Initialize(HWND handle);
+		void Initialize(HWND handle, UINT width, UINT height);
 		void Update();
 		void LateUpdate();
 		void Run();
@@ -20,10 +20,19 @@ namespace dh {
 	private:
 		HWND mHwnd;
 		HDC mHdc;
+
+		HDC mBackHdc;
+		HBITMAP mBackBuffer;
+		
+
+		UINT mWidth;
+		UINT mHeight;
 	
+
 		GameObject mPlayer;
 		GameObject2p mPlayer2p;
 		DinoObject Dino;
+
 		
 	};
 

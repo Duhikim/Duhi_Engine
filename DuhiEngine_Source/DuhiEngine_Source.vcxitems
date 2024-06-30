@@ -20,6 +20,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)DHGameObject.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)DHGameObject2p.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)DHInput.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)DHTime.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)DHDinoObject.cpp" />
@@ -27,5 +28,6 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)DHGameObject.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)DHGameObject2p.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)DHInput.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)DHTime.cpp" />
   </ItemGroup>
 </Project>
