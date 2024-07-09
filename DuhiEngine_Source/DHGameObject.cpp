@@ -68,7 +68,7 @@ namespace dh {
          //Rectangle(mHdc, 100 + mX, 100 + mY, 200 + mX, 200 + mY);
 
         
-        Rectangle(hdc, 100 + (int)mX, 200 + (int)mY, 200 + (int)mX, 300 + (int)mY);
+        Rectangle(hdc, 100 + mX, 200 + mY, 200 + mX, 300 + mY);
 
         SelectObject(hdc, oldBrush);
         /*DeleteObject(grayBrush);*/

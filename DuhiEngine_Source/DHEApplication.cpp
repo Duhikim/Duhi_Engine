@@ -1,13 +1,6 @@
 #include "DHEApplication.h"
 #include "DHInput.h"
 #include "DHTime.h"
-#include "DHbullets.h"
-#include "DHDinoObject.h"
-#include "CommonInclude.h"
-#include "DHSceneManager.h"
-#include "DHScene.h"
-#include "..\\DuhiEngine_Window\DHPlayScene.h"
-
 
 namespace dh {
 
@@ -18,7 +11,6 @@ namespace dh {
 		, mHeight(0)
 		, mBackHdc(NULL)
 		, mBackBuffer(NULL)
-		, mDinoObjects{}
 
 	{ }
 
@@ -32,8 +24,6 @@ namespace dh {
 		mHwnd = handle;
 		mHdc = GetDC(handle);
 
-		SceneManager::Initialize();
-		
 
 
 		RECT rect = {0, 0, width, height};
@@ -46,7 +36,7 @@ namespace dh {
 		ShowWindow(mHwnd, true);
 
 		// Window 해상도에 맞는 백버퍼(도화지) 생성
-		mBackBuffer = CreateCompatibleBitmap(mHdc, (int)width, (int)height);
+		mBackBuffer = CreateCompatibleBitmap(mHdc, width, height);
 
 		// DC를 새로 만들거야. 메모리 더써서 연산은 줄임.
 		
@@ -56,29 +46,19 @@ namespace dh {
 		HBITMAP oldBitmap = (HBITMAP)SelectObject(mBackHdc, mBackBuffer);
 		DeleteObject(oldBitmap);
 
-        mPlayer.SetPosition(0,0);
-		for (int i = 0; i < mDinoObjects.size(); i++) {
-			mDinoObjects[i]->Setposition(0, 0);
-		}
+        mPlayer.SetPosition(0, 0);
 
 		Input::Initailize();
 		Time::Initialize();
 	}
-	void Application::Update() 
-	{
+	void Application::Update() {
 		Input::Update();
 		Time::Update();
-
-
-		SceneManager::Update();
-	/*	for (int i = 0; i < mDinoObjects.size(); i++) {
-			mDinoObjects[i]->Update();
-		}*/
 
        //mPlayer.Update();
 	   //mPlayer2p.Update();
 	   
-		//Dino.Update();	
+		Dino.Update();
 	   
     }
 	void Application::LateUpdate() {}
@@ -88,35 +68,19 @@ namespace dh {
 		Render();
 	}
 	void Application::Render() {
-
-		clearRenderTarget();
+		
+		Rectangle(mBackHdc, 0, 0, 1600, 900);
+		
 		Time::Render(mBackHdc);
-		//Dino.Render(mBackHdc);
-
-		//SceneManager::Render(mBackHdc);
-		for (int i = 0; i < mDinoObjects.size(); i++) {
-			mDinoObjects[i]->Render(mBackHdc);
-		}
-
-		copyRenderTarget(mBackHdc, mHdc);
-
-	}
-
-	void Application::clearRenderTarget() {
-		HBRUSH WhiteBrush = CreateSolidBrush(RGB(255, 255, 255));
-		HBRUSH oldBrush = (HBRUSH)SelectObject(mBackHdc, WhiteBrush);
+		
+		
+		// mPlayer.Render(mHdc);
+		//mPlayer2p.Render(mHdc);
+		Dino.Render(mBackHdc);
 
 
-		SelectObject(mBackHdc, WhiteBrush);
-		Rectangle(mBackHdc, -10, -10, 1610, 910);
-		DeleteObject(WhiteBrush);
-
-	}
-
-	void Application::copyRenderTarget(HDC source, HDC dest) {
-		BitBlt(dest, 0, 0, mWidth, mHeight,
-			source, 0, 0, SRCCOPY);
-
+		BitBlt(mHdc, 0, 0, mWidth, mHeight, 
+			mBackHdc, 0, 0, SRCCOPY);
 	}
 
 }

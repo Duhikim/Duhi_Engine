@@ -3,9 +3,6 @@
 #include "DHGameObject.h"
 #include "DHGameObject2p.h"
 #include "DHDinoObject.h"
-#include "DHbullets.h"
-#include "DHSceneManager.h"
-#include "..\\DuhiEngine_Window\DHPlayScene.h"
 
 namespace dh {
 	class Application
@@ -19,11 +16,8 @@ namespace dh {
 		void LateUpdate();
 		void Run();
 		void Render();
-		
 
 	private:
-		void clearRenderTarget();
-		void copyRenderTarget(HDC source, HDC dest);
 		HWND mHwnd;
 		HDC mHdc;
 
@@ -37,10 +31,7 @@ namespace dh {
 
 		GameObject mPlayer;
 		GameObject2p mPlayer2p;
-		/*DinoObject Dino;*/
-
-		std::vector<DinoObject*> mDinoObjects;
-		
+		DinoObject Dino;
 
 		
 	};

@@ -1,6 +1,5 @@
 #pragma once
 #include "CommonInclude.h"
-#include "DHbullets.h"
 
 namespace dh {
 	class DinoObject
@@ -16,7 +15,7 @@ namespace dh {
 		void LateUpdate();
 		void Render(HDC hdc);
 
-	private:	
+	private:
 		float Xpos;
 		float Ypos;
 		float Xspeed;
@@ -26,9 +25,6 @@ namespace dh {
 		float height;
 		
 		void creatKeyInput();
-				
-		bullets bullets[10];
-
 	};
 
 }

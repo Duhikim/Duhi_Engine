@@ -68,7 +68,7 @@ namespace dh {
          //Rectangle(mHdc, 100 + mX, 100 + mY, 200 + mX, 200 + mY);
 
 
-        Ellipse(hdc, 500 + (int)mX, 700 + (int)mY, 600 + (int)mX, 800 + (int)mY);
+        Ellipse(hdc, 500 + mX, 700 + mY, 600 + mX, 800 + mY);
 
         SelectObject(hdc, oldBrush);
         /*DeleteObject(grayBrush);*/
