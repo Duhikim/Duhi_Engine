@@ -15,19 +15,27 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)CommonInclude.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)DHbullets.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)DHDinoObject.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)DHEApplication.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)DHEntity.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)DHGameObject.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)DHGameObject2p.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)DHInput.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)DHScene.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)DHSceneManager.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)DHTime.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)DHbullets.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)DHDinoObject.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)DHEApplication.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)DHEntity.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)DHGameObject.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)DHGameObject2p.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)DHInput.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)DHScene.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)DHSceneManager.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)DHTime.cpp" />
   </ItemGroup>
 </Project>
