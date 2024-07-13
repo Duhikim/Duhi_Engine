@@ -1,6 +1,5 @@
 #pragma once
 #include "CommonInclude.h"
-#include "DHbullets.h"
 
 namespace dh {
 	class DinoObject
@@ -25,11 +24,7 @@ namespace dh {
 		float Yacc;
 		float height;
 		
-		
 		void creatKeyInput();
-
-		bullets bullets[20];
-
 	};
 
 }

@@ -69,12 +69,12 @@ namespace dh {
 	}
 	void Application::Render() {
 		
-		HBRUSH WhiteBrush = CreateSolidBrush(RGB(255, 255, 255));
+		HBRUSH WhiteBrush = CreateSolidBrush(RGB(0, 0, 0));
 		HBRUSH oldBrush = (HBRUSH)SelectObject(mBackHdc, WhiteBrush);
 
 
 		SelectObject(mBackHdc, WhiteBrush);
-		Rectangle(mBackHdc, -1, -1, 1601, 901);
+		Rectangle(mBackHdc, 0, 0, 1600, 900);
 
 		DeleteObject(WhiteBrush);
 		

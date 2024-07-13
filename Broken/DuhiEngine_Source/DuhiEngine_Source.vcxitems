@@ -15,7 +15,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)CommonInclude.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)DHbullets.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)DHDinoObject.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)DHEApplication.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)DHGameObject.h" />
@@ -24,7 +23,6 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)DHTime.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="$(MSBuildThisFileDirectory)DHbullets.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)DHDinoObject.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)DHEApplication.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)DHGameObject.cpp" />

@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34009.444
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Editor_Window", "Editor_Window\Editor_Window.vcxproj", "{34EA6753-D911-4DD2-92BD-8ACD184DDC44}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DuhiEngine_Window", "DuhiEngine_Window\DuhiEngine_Window.vcxproj", "{B1FD496D-53E7-4968-8E3B-2B4C190DB562}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AutoGenNamea9927decc6a94757af8383b127b1f656", "..\..\Users\Kim Duhi\AppData\Local\Temp\AutoGenNamea9927decc6a94757af8383b127b1f656", "{ECAA8B41-265B-4A1C-9CCA-0A8258E9473A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{34EA6753-D911-4DD2-92BD-8ACD184DDC44}.Debug|x64.ActiveCfg = Debug|x64
+		{34EA6753-D911-4DD2-92BD-8ACD184DDC44}.Debug|x64.Build.0 = Debug|x64
+		{34EA6753-D911-4DD2-92BD-8ACD184DDC44}.Debug|x86.ActiveCfg = Debug|Win32
+		{34EA6753-D911-4DD2-92BD-8ACD184DDC44}.Debug|x86.Build.0 = Debug|Win32
+		{34EA6753-D911-4DD2-92BD-8ACD184DDC44}.Release|x64.ActiveCfg = Release|x64
+		{34EA6753-D911-4DD2-92BD-8ACD184DDC44}.Release|x64.Build.0 = Release|x64
+		{34EA6753-D911-4DD2-92BD-8ACD184DDC44}.Release|x86.ActiveCfg = Release|Win32
+		{34EA6753-D911-4DD2-92BD-8ACD184DDC44}.Release|x86.Build.0 = Release|Win32
+		{B1FD496D-53E7-4968-8E3B-2B4C190DB562}.Debug|x64.ActiveCfg = Debug|x64
+		{B1FD496D-53E7-4968-8E3B-2B4C190DB562}.Debug|x64.Build.0 = Debug|x64
+		{B1FD496D-53E7-4968-8E3B-2B4C190DB562}.Debug|x86.ActiveCfg = Debug|Win32
+		{B1FD496D-53E7-4968-8E3B-2B4C190DB562}.Debug|x86.Build.0 = Debug|Win32
+		{B1FD496D-53E7-4968-8E3B-2B4C190DB562}.Release|x64.ActiveCfg = Release|x64
+		{B1FD496D-53E7-4968-8E3B-2B4C190DB562}.Release|x64.Build.0 = Release|x64
+		{B1FD496D-53E7-4968-8E3B-2B4C190DB562}.Release|x86.ActiveCfg = Release|Win32
+		{B1FD496D-53E7-4968-8E3B-2B4C190DB562}.Release|x86.Build.0 = Release|Win32
+		{ECAA8B41-265B-4A1C-9CCA-0A8258E9473A}.Debug|x64.ActiveCfg = Debug|Win32
+		{ECAA8B41-265B-4A1C-9CCA-0A8258E9473A}.Debug|x64.Build.0 = Debug|Win32
+		{ECAA8B41-265B-4A1C-9CCA-0A8258E9473A}.Debug|x86.ActiveCfg = Debug|Win32
+		{ECAA8B41-265B-4A1C-9CCA-0A8258E9473A}.Debug|x86.Build.0 = Debug|Win32
+		{ECAA8B41-265B-4A1C-9CCA-0A8258E9473A}.Release|x64.ActiveCfg = Debug|Win32
+		{ECAA8B41-265B-4A1C-9CCA-0A8258E9473A}.Release|x64.Build.0 = Debug|Win32
+		{ECAA8B41-265B-4A1C-9CCA-0A8258E9473A}.Release|x86.ActiveCfg = Debug|Win32
+		{ECAA8B41-265B-4A1C-9CCA-0A8258E9473A}.Release|x86.Build.0 = Debug|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C2751FB2-E949-4190-BF60-516080F2A591}
+	EndGlobalSection
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		DuhiEngine_Source\DuhiEngine_Source.vcxitems*{b1fd496d-53e7-4968-8e3b-2b4c190db562}*SharedItemsImports = 4
+	EndGlobalSection
+EndGlobal
