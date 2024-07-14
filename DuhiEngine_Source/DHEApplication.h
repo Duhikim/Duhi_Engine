@@ -9,13 +9,20 @@ namespace dh {
 	{
 	public:
 		Application();
-		~Application();
-		void test();
+		~Application();		
 		void Initialize(HWND handle, UINT width, UINT height);
 		void Update();
 		void LateUpdate();
 		void Run();
 		void Render();
+
+
+	private: // function
+		void clearRenderTarget();
+		void copyRenderTarget(HDC source, HDC dest);	
+		void adjustWindowRect(HWND hwnd, UINT width, UINT height);
+		void createBuffer(UINT width, UINT height);
+		void initializeEtc();
 
 	private:
 		HWND mHwnd;
@@ -30,8 +37,10 @@ namespace dh {
 	
 
 		GameObject mPlayer;
-		GameObject2p mPlayer2p;
+		/*GameObject2p mPlayer2p;*/
 		DinoObject Dino;
+
+		std::vector<GameObject2p*> mGameObjects2p;
 
 		
 	};

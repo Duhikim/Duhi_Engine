@@ -2,13 +2,12 @@
 
 
 namespace dh {
-    GameObject2p::GameObject2p() {
-
-
-    }
+    GameObject2p::GameObject2p()
+        : mX(0)
+        , mY(0)
+    {}
 
     GameObject2p::~GameObject2p() {
-
 
     }
 
@@ -16,16 +15,16 @@ namespace dh {
 
 
         if (GetAsyncKeyState('A') & 0X8000) {
-            mX -= 0.01f;
+            mX -= 500*Time::DeltaTime();
         }
         if (GetAsyncKeyState('D') & 0X8000) {
-            mX += 0.01f;
+            mX += 500 * Time::DeltaTime();
         }
         if (GetAsyncKeyState('W') & 0X8000) {
-            mY -= 0.01f;
+            mY -= 500 * Time::DeltaTime();
         }
         if (GetAsyncKeyState('S') & 0X8000) {
-            mY += 0.01f;
+            mY += 500 * Time::DeltaTime();
         }
 
     }
@@ -68,7 +67,7 @@ namespace dh {
          //Rectangle(mHdc, 100 + mX, 100 + mY, 200 + mX, 200 + mY);
 
 
-        Ellipse(hdc, 500 + mX, 700 + mY, 600 + mX, 800 + mY);
+        Ellipse(hdc, mX, mY, mX+100, mY+100);
 
         SelectObject(hdc, oldBrush);
         /*DeleteObject(grayBrush);*/

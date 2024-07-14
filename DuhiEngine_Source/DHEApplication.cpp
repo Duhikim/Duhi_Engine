@@ -11,46 +11,25 @@ namespace dh {
 		, mHeight(0)
 		, mBackHdc(NULL)
 		, mBackBuffer(NULL)
-
+		, mGameObjects2p{}
 	{ }
 
     Application::~Application() {}
 
-	void Application::test() {
-		
-	}
-
 	void Application::Initialize(HWND handle, UINT width, UINT height) { // 핸들은 대부분 pointer 형태라 참조 안해도 됨.
-		mHwnd = handle;
-		mHdc = GetDC(handle);
-
-
-
-		RECT rect = {0, 0, width, height};
-		AdjustWindowRect(&rect, WS_OVERLAPPEDWINDOW, false);
-
-		mWidth = rect.right - rect.left;
-		mHeight = rect.bottom - rect.top;
-
-		SetWindowPos(mHwnd, nullptr, 0, 0, mWidth, mHeight, 0);
-		ShowWindow(mHwnd, true);
-
-		// Window 해상도에 맞는 백버퍼(도화지) 생성
-		mBackBuffer = CreateCompatibleBitmap(mHdc, width, height);
-
-		// DC를 새로 만들거야. 메모리 더써서 연산은 줄임.
 		
-		// 백버퍼를 가르킬 DC 생성
-		mBackHdc = CreateCompatibleDC(mHdc);
+		adjustWindowRect(handle, width, height);
+		createBuffer(width, height);   
+		initializeEtc();
 
-		HBITMAP oldBitmap = (HBITMAP)SelectObject(mBackHdc, mBackBuffer);
-		DeleteObject(oldBitmap);
-
-        mPlayer.SetPosition(0, 0);
-
-		Input::Initailize();
-		Time::Initialize();
+		
+		for (int i = 0; i < 5; i++) {
+			GameObject2p* gameObj2p = new GameObject2p;
+			gameObj2p->SetPosition(rand()%1600, rand()%900);
+			mGameObjects2p.push_back(gameObj2p);
+		}
 	}
+
 	void Application::Update() {
 		Input::Update();
 		Time::Update();
@@ -58,7 +37,11 @@ namespace dh {
        //mPlayer.Update();
 	   //mPlayer2p.Update();
 	   
+		for (int i = 0; i < mGameObjects2p.size(); i++) {
+			mGameObjects2p[i]->Update();
+		}
 		Dino.Update();
+		//mPlayer2p.Update();
 	   
     }
 	void Application::LateUpdate() {}
@@ -69,26 +52,73 @@ namespace dh {
 	}
 	void Application::Render() {
 		
+		clearRenderTarget();
+		
+		Time::Render(mBackHdc);		
+		// mPlayer.Render(mHdc);
+		//mPlayer2p.Render(mBackHdc);
+		
+		for (int i = 0; i < mGameObjects2p.size(); i++) {
+			mGameObjects2p[i]->Render(mBackHdc);
+		}
+		Dino.Render(mBackHdc);
+		
+		copyRenderTarget(mBackHdc, mHdc);
+		
+	}
+
+
+
+	void Application::adjustWindowRect(HWND hwnd, UINT width, UINT height)
+	{
+		mHwnd = hwnd;
+		mHdc = GetDC(hwnd);
+
+		RECT rect = { 0, 0, width, height };
+		AdjustWindowRect(&rect, WS_OVERLAPPEDWINDOW, false);
+
+		mWidth = rect.right - rect.left;
+		mHeight = rect.bottom - rect.top;
+
+		SetWindowPos(mHwnd, nullptr, 0, 0, mWidth, mHeight, 0);
+		ShowWindow(mHwnd, true);
+	}
+
+	void Application::createBuffer(UINT width, UINT height)
+	{
+
+		// Window 해상도에 맞는 백버퍼(도화지) 생성
+		mBackBuffer = CreateCompatibleBitmap(mHdc, width, height);
+
+		// DC를 새로 만들거야. 메모리 더써서 연산은 줄임.
+
+		// 백버퍼를 가르킬 DC 생성
+		mBackHdc = CreateCompatibleDC(mHdc);
+
+		SelectObject(mBackHdc, mBackBuffer);
+
+	}
+
+	void Application::clearRenderTarget()
+	{
 		HBRUSH WhiteBrush = CreateSolidBrush(RGB(255, 255, 255));
 		HBRUSH oldBrush = (HBRUSH)SelectObject(mBackHdc, WhiteBrush);
 
-
 		SelectObject(mBackHdc, WhiteBrush);
 		Rectangle(mBackHdc, -1, -1, 1601, 901);
-
+		
 		DeleteObject(WhiteBrush);
-		
-		
-		Time::Render(mBackHdc);
-		
-		
-		// mPlayer.Render(mHdc);
-		//mPlayer2p.Render(mHdc);
-		Dino.Render(mBackHdc);
-
-
-		BitBlt(mHdc, 0, 0, mWidth, mHeight, 
-			mBackHdc, 0, 0, SRCCOPY);
 	}
 
+	void Application::copyRenderTarget(HDC source, HDC dest)
+	{
+		BitBlt(dest, 0, 0, mWidth, mHeight,
+			source, 0, 0, SRCCOPY);
+	}
+
+	void Application::initializeEtc()
+	{
+		Input::Initailize();
+		Time::Initialize();
+	}
 }

@@ -1,6 +1,8 @@
 #pragma once
 #include "CommonInclude.h"
 #include "DHbullets.h"
+#include "DHInput.h"
+#include "DHTime.h"
 
 namespace dh {
 	class DinoObject

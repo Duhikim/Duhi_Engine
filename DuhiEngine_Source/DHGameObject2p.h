@@ -1,5 +1,6 @@
 #pragma once
 #include "CommonInclude.h"
+#include "DHTime.h"
 
 namespace dh {
 	class GameObject2p
