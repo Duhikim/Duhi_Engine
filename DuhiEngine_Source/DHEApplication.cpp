@@ -11,7 +11,7 @@ namespace dh {
 		, mHeight(0)
 		, mBackHdc(NULL)
 		, mBackBuffer(NULL)
-		, mGameObjects2p{}
+		/*, mGameObjects2p{}*/
 	{ }
 
     Application::~Application() {}
@@ -22,26 +22,24 @@ namespace dh {
 		createBuffer(width, height);   
 		initializeEtc();
 
-		
-		for (int i = 0; i < 5; i++) {
+		SceneManager::Initialize();
+		/*for (int i = 0; i < 5; i++) {
 			GameObject2p* gameObj2p = new GameObject2p;
 			gameObj2p->SetPosition(rand()%1600, rand()%900);
 			mGameObjects2p.push_back(gameObj2p);
-		}
+		}*/
 	}
 
 	void Application::Update() {
 		Input::Update();
 		Time::Update();
-
-       //mPlayer.Update();
-	   //mPlayer2p.Update();
-	   
-		for (int i = 0; i < mGameObjects2p.size(); i++) {
+		       	   
+		/*for (int i = 0; i < mGameObjects2p.size(); i++) {
 			mGameObjects2p[i]->Update();
-		}
+		}*/
 		Dino.Update();
-		//mPlayer2p.Update();
+
+		SceneManager::Update();
 	   
     }
 	void Application::LateUpdate() {}
@@ -55,14 +53,10 @@ namespace dh {
 		clearRenderTarget();
 		
 		Time::Render(mBackHdc);		
-		// mPlayer.Render(mHdc);
-		//mPlayer2p.Render(mBackHdc);
 		
-		for (int i = 0; i < mGameObjects2p.size(); i++) {
-			mGameObjects2p[i]->Render(mBackHdc);
-		}
 		Dino.Render(mBackHdc);
-		
+		SceneManager::Render(mBackHdc);
+
 		copyRenderTarget(mBackHdc, mHdc);
 		
 	}

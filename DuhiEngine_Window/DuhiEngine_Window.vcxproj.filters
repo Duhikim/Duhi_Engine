@@ -1,2 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" />
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Scenes">
+      <UniqueIdentifier>{f2791a12-19ab-41f3-bdab-878ba17f256e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DHLoadScene.h">
+      <Filter>Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="DHPlayScene.h" />
+    <ClInclude Include="DHEndScene.h" />
+    <ClInclude Include="DHTitleScene.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="DHPlayScene.cpp" />
+    <ClCompile Include="DHEndScene.cpp" />
+    <ClCompile Include="DHTitleScene.cpp" />
+  </ItemGroup>
+</Project>

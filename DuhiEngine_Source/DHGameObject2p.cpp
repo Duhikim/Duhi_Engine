@@ -26,6 +26,11 @@ namespace dh {
         if (GetAsyncKeyState('S') & 0X8000) {
             mY += 500 * Time::DeltaTime();
         }
+        
+        if (mX > 1500) mX = 1500;
+        if (mX < 0) mX = 0;
+        if (mY > 700) mY = 700;
+        if (mY < 0) mY = 0;
 
     }
 
@@ -36,7 +41,7 @@ namespace dh {
     void GameObject2p::Render(HDC hdc) {
 
         //파랑 브러쉬 생성
-        HBRUSH RedBrush = CreateSolidBrush(RGB(255, 0, 0));
+        HBRUSH RedBrush = CreateSolidBrush(RGB(255,0,0));
 
         //파랑 브러쉬 DC에 선택, 흰색 브러쉬 리턴
         HBRUSH oldBrush = (HBRUSH)SelectObject(hdc, RedBrush);

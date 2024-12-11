@@ -5,6 +5,7 @@
 #include "Editor_Window.h"
 
 #include "..\\DuhiEngine_Source\DHEApplication.h"
+#include "..\\DuhiEngine_Window\\DHLoadScene.h"
 //#pragma comment (lib, "..\\x64\Debug\\DuhiEngine_Window.lib") 
 
 dh::Application application;
@@ -148,6 +149,9 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 
    ShowWindow(hWnd, nCmdShow);
    UpdateWindow(hWnd);
+
+   //load scene
+   dh::LoadScenes();
 
    return TRUE;
 }

@@ -132,6 +132,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="DHEndScene.h" />
+    <ClInclude Include="DHLoadScene.h" />
+    <ClInclude Include="DHPlayScene.h" />
+    <ClInclude Include="DHTitleScene.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="DHEndScene.cpp" />
+    <ClCompile Include="DHPlayScene.cpp" />
+    <ClCompile Include="DHTitleScene.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

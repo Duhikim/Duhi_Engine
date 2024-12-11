@@ -3,6 +3,7 @@
 #include "DHGameObject.h"
 #include "DHGameObject2p.h"
 #include "DHDinoObject.h"
+#include "DHSceneManager.h"
 
 namespace dh {
 	class Application
@@ -40,7 +41,7 @@ namespace dh {
 		/*GameObject2p mPlayer2p;*/
 		DinoObject Dino;
 
-		std::vector<GameObject2p*> mGameObjects2p;
+		//std::vector<GameObject2p*> mGameObjects2p;
 
 		
 	};

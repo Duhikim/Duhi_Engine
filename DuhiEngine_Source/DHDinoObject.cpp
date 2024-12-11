@@ -107,7 +107,7 @@ namespace dh {
 
 		if (Input::GetKeyDown(eKeyCode::Up) && Ypos>-50) {
 			Ypos = 0;
-			Yspeed = -2.2 * MaxSpeed;			
+			Yspeed = -2.8 * MaxSpeed;	// default : -2.2
 		}
 		
 		Yacc = MaxSpeed/(0.15 * ZeroMax);
@@ -119,11 +119,11 @@ namespace dh {
 
 
 		//¾çÂÊ º®
-		if (Xpos < 0) {
-			Xpos = 0; Xspeed = 0;
+		if (Xpos < -100) {
+			Xpos = -100; Xspeed = 0;
 		}
-		else if (Xpos > 1400) {
-			Xpos = 1400; Xspeed = 0;
+		else if (Xpos > 1450) {
+			Xpos = 1450; Xspeed = 0;
 		}
 
 		
